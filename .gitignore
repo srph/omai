@@ -1,0 +1,13 @@
+# deps
+npm_modules
+bower_components
+
+# build files (as we don't need it updated 'til release)
+dist
+
+# npm
+npm-debug.log
+
+# misc
+.DS_STORE
+Thumbs.db
