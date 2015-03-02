@@ -3,7 +3,7 @@ node_modules
 bower_components
 
 # build files (as we don't need it updated 'til release)
-dist
+dist/*.js
 
 # npm
 npm-debug.log
