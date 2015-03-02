@@ -1,0 +1,7 @@
+exports [
+  {
+    name: '',
+    description: '',
+    thumbnail: ''
+  }
+];
