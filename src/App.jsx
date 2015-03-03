@@ -1,3 +1,5 @@
+require("babel/register");
+
 import * as React from 'react';
 import * as Work from './Work/WorkList';
 import * as Profile from './Profile/Profile';

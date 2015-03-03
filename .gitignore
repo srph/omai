@@ -4,6 +4,8 @@ bower_components
 
 # build files (as we don't need it updated 'til release)
 dist/*.js
+dist/*.js.map
+dist/*.map
 
 # npm
 npm-debug.log

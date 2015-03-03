@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "babel ./src/App.jsx -o ./dist/script.js",
-    "watch": "babel ./src/App.jsx -w -o ./dist/script.js"
+    "build": "babel --modules umd ./src/App.jsx -o ./dist/script.js --source-maps",
+    "watch": "babel --modules umd ./src/App.jsx -w -o ./dist/script.js --source-maps"
   },
   "repository": {
     "type": "git",
