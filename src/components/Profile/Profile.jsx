@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 import * as React from 'react';
 
 var Profile = export React.createClass({

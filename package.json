@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "babel ./src/App.jsx -o ./dist/script.js",
-    "watch": "babel ./src/App.jsx -o -w ./dist/script.js"
+    "watch": "babel ./src/App.jsx -w -o ./dist/script.js"
   },
   "repository": {
     "type": "git",

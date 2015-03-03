@@ -1,4 +1,3 @@
-/** @jsx React.DOM  */
 import * as React from 'react';
 import * as WorkItem from './WorkItem';
 import * as list from './data';

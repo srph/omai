@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 import * as React from 'react';
 
 var WorkItem = export React.createClass({
