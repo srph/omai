@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as WorkItem from './WorkItem';
-import * as list from './data';
+import list from './data';
 
 var WorkList = export React.createClass({
   render() {
