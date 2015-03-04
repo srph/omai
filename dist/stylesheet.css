@@ -1,4 +1,13 @@
 /**
+ *
+ */
+body {
+	font-family: 'Lato', sans-serif, serif;
+	background-color: #f1f3f5;
+	color: #93a2a6;
+}
+
+/**
  * Container
  */
 .container {
@@ -25,7 +34,7 @@ h6, .h6 { font-size: 12px; }
 
 .h1, .h2, .h3, .h4, .h5, .h6,
 h1, h2, h3, h4, h5, h6 {
-	font-family: inherit;
+	font-family: 'Bitter', serif, sans-serif;
 	font-weight: 500;
 }
 
@@ -37,11 +46,15 @@ h1, h2, h3 {
 
 /**
  * Utility classes
- * <div class="u-text -center">
  */
-.u-text.-center { text-align: center; }
-.u-text.-right { text-align: right; }
-.u-text.-left { text-align: left; }
+.u-color-highlight { color: #ff5050; }
+.u-color-highlight-alt { color: #090909 };
+ 
+ 
+ /* Text Align */
+.u-text-center { text-align: center; }
+.u-text-right { text-align: right; }
+.u-text-left { text-align: left; }
 
 /* Clearfix */
 .u-clearfix::after { clear: both; }
