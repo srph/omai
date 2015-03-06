@@ -1,25 +1,21 @@
 import React from 'react';
-import {StyleResolverMixin, MatchMediaItem} from 'radium';
+import {StyleResolverMixin} from 'radium';
 
 var Description = React.createClass({
-  mixins: [StyleResolverMixin, MatchMediaItem],
+  mixins: [StyleResolverMixin],
 
   render() {
     var styles = {
-      'box': this.buildStyles({
+      'box': {
         position: 'relative',
         marginTop: 35,
 
-        padding: '10px 5px',
+        padding: 15,
         backgroundColor: '#fff',
         boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
 
-        mediaQueries: [{
-          sm: {
-            padding: '15px 10px'
-          }
-        }]
-      }),
+        lineHeight: '1.5'
+      },
 
       'box.caret': {
         position: 'absolute',
