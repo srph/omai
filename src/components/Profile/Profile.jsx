@@ -1,5 +1,8 @@
 import React from 'react';
+
 import DisplayPicture from './DisplayPicture';
+import Title from './Title';
+import Description from './Description';
 
 var Profile = React.createClass({
   propTypes: {
@@ -18,6 +21,8 @@ var Profile = React.createClass({
     return (
       <div>
         <DisplayPicture />
+        <Title />
+        <Description />
       </div>
     );
   }

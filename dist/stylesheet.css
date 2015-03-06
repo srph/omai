@@ -27,7 +27,12 @@ h1, h2, h3, h4, h5, h6 {
 .h1, .h2, .h3,
 h1, h2, h3 {
 	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
+}
+
+h4, h5, h6 {
+	margin-top: 10px;
+	margin-bottom: 2.5px;
 }
 
 /**
@@ -41,6 +46,11 @@ h1, h2, h3 {
 .u-text-center { text-align: center; }
 .u-text-right { text-align: right; }
 .u-text-left { text-align: left; }
+
+/* Font Weight */
+.u-text-light { font-weight: 300; }
+.u-text-normal { font-weight: 500; }
+.u-text-bold, strong { font-weight: 600; }
 
 /* Clearfix */
 .u-clearfix::after { clear: both; }
