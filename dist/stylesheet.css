@@ -60,11 +60,11 @@ h4, h5, h6 {
 .u-pull-right: { float: right; }
 
 /* Some Animations */
-.see-work-btn-leave {
+.a-leave {
 	opacity: 0;
 	transition: all .35s;
 }
 
-.see-work-btn-leave.see-work-btn-leave-active {
+.a-leave.see-work-btn-leave-active {
 	opacity: 0.1;
 }

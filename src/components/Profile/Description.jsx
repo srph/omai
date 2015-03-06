@@ -103,7 +103,7 @@ var Description = React.createClass({
           <span className="u-text-normal">boring message</span>?
         </div>
 
-        <CSSTransitionGroup transitionName="see-work-btn">
+        <CSSTransitionGroup transitionName="a">
           { !active ? (
             <div>
               <hr style={styles['box.work-hr']} />
