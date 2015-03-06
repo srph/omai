@@ -1,5 +1,7 @@
-import React from 'react';
+import React from 'react/addons';
 import {StyleResolverMixin, MatchMediaItem} from 'radium';
+
+var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 var Description = React.createClass({
   mixins: [StyleResolverMixin, MatchMediaItem],
@@ -31,8 +33,10 @@ var Description = React.createClass({
         padding: '0px 10px',
         backgroundColor: '#fff',
         boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
+        borderRadius: 6,
 
         lineHeight: '1.5',
+
         mediaQueries: [{
           sm: {
             width: '100%'
@@ -53,7 +57,6 @@ var Description = React.createClass({
         height: 0,
         width: 0,
 
-        borderRadius: 6,
         // borderColor: '#fff',
         // borderWidth: 1,
         // borderStyle: 'solid',
@@ -100,15 +103,16 @@ var Description = React.createClass({
           <span className="u-text-normal">boring message</span>?
         </div>
 
-        { !active ?
-          (
-            <span>
+        <CSSTransitionGroup transitionName="see-work-btn">
+          { !active ? (
+            <div>
               <hr style={styles['box.work-hr']} />
               <div style={styles['box.work']} onClick={activationHandler}>
                 <h5 className="u-text-uppercase u-color-highlight" style={styles['box.work-text']}> See Work </h5>
               </div>
-            </span>
-          ) : ''}
+            </div>
+            ) : null}
+          </CSSTransitionGroup>
       </div>
     )
   }
