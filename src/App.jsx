@@ -1,10 +1,22 @@
-require("babel/register");
+import React from 'react';
 
-import * as React from 'react';
-import * as Work from './Work/WorkList';
-import * as Profile from './Profile/Profile';
+/* Second-level components */
+import Container from './components/Container/Container';
+import Work from './components/Work/WorkList';
+import Profile from './components/Profile/Profile';
+
+/**
+ * Initialize MatchMediaBase
+ * https://github.com/FormidableLabs/radium/blob/master/docs/guides/media-queries.md
+ */
+import {MatchMediaBase} from 'radium';
+MatchMediaBase.init({ sm: '(min-width: 768px)' });
 
 var App = React.createClass({
+  // MatchMediaBase allows all of this components this descendants
+  // to acquire the sizes we initialized (see top )
+  mixins: [MatchMediaBase],
+
   getInitialState() {
     return { active: false };
   },
@@ -14,10 +26,10 @@ var App = React.createClass({
     var activate = this.state._activate;
 
     return (
-      <div className="container">
+      <Container>
         <Profile activate={active} activateHandler={activate} />
         { active ? <WorkList /> : '' }
-      </div>
+      </Container>
     );
   },
 

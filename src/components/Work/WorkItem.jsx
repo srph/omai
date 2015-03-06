@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-var WorkItem = export React.createClass({
+var WorkItem = React.createClass({
   propTypes: {
     /**
      * Data of the item
@@ -19,3 +19,5 @@ var WorkItem = export React.createClass({
     );
   }
 });
+
+export default WorkItem;

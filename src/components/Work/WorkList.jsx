@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import * as WorkItem from './WorkItem';
 import list from './data';
 
-var WorkList = export React.createClass({
+var WorkList = React.createClass({
   render() {
     return (
       <div>
@@ -13,3 +13,5 @@ var WorkList = export React.createClass({
     );
   }
 });
+
+export default WorkList;

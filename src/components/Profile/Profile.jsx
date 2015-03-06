@@ -1,6 +1,7 @@
-import * as React from 'react';
+import React from 'react';
+import DisplayPicture from './DisplayPicture';
 
-var Profile = export React.createClass({
+var Profile = React.createClass({
   propTypes: {
     /**
      * Flag for work (whether active)
@@ -16,7 +17,10 @@ var Profile = export React.createClass({
   render() {
     return (
       <div>
+        <DisplayPicture />
       </div>
     );
   }
 });
+
+export default Profile;

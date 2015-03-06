@@ -8,20 +8,6 @@ body {
 }
 
 /**
- * Container
- */
-.container {
-	padding-right: 15px;
-	padding-left: 15px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-@media(min-width: 768px) {
-	.container { width: 750px; }
-}
-
-/**
  * Headers
  * @reference http://getbootstrap.com/css#typography
  */
@@ -48,7 +34,7 @@ h1, h2, h3 {
  * Utility classes
  */
 .u-color-highlight { color: #ff5050; }
-.u-color-highlight-alt { color: #090909 };
+.u-color-highlight-alt { color: #090909; }
  
  
  /* Text Align */
