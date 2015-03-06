@@ -2,7 +2,7 @@ import React from 'react';
 
 /* Second-level components */
 import Container from './components/Container/Container';
-import Work from './components/Work/WorkList';
+import WorkList from './components/Work/WorkList';
 import Profile from './components/Profile/Profile';
 
 /**
@@ -23,11 +23,11 @@ var App = React.createClass({
 
   render() {
     var active = this.state.active;
-    var activate = this.state._activate;
+    var activate = this._activate;
 
     return (
       <Container>
-        <Profile activate={active} activateHandler={activate} />
+        <Profile active={active} activationHandler={activate} />
         { active ? <WorkList /> : '' }
       </Container>
     );

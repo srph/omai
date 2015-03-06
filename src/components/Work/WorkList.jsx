@@ -1,5 +1,5 @@
 import React from 'react';
-import * as WorkItem from './WorkItem';
+import WorkItem from './WorkItem';
 import list from './data';
 
 var WorkList = React.createClass({

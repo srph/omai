@@ -11,7 +11,7 @@ module.exports = {
     loaders: [
       // Transform to es6 with babel
       // http://webpack.github.io/docs/loaders.html
-      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: "babel-loader?modules=common" }
+      { test: /\.(js|jsx|es6)$/, exclude: /node_modules/, loader: "babel-loader?modules=common&experimental=true" }
     ]
   },
   resolve: {

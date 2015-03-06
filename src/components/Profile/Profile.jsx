@@ -9,20 +9,21 @@ var Profile = React.createClass({
     /**
      * Flag for work (whether active)
      */
-    active: React.PropTypes.bool,
+    active: React.PropTypes.bool.isRequired,
 
     /**
      * Handle setting of flag for work (normally to set it as true)
      */
-    activateHandler: React.PropTypes.func
+    activationHandler: React.PropTypes.func.isRequired
   },
 
   render() {
+    var {active, activationHandler} = this.props;
     return (
       <div>
         <DisplayPicture />
         <Title />
-        <Description />
+        <Description active={active} activationHandler={activationHandler} />
       </div>
     );
   }
