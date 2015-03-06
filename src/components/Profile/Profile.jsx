@@ -2,7 +2,7 @@ import React from 'react';
 
 import DisplayPicture from './DisplayPicture';
 import Title from './Title';
-import Description from './Description';
+import Description from './Description/Description';
 
 var Profile = React.createClass({
   propTypes: {
