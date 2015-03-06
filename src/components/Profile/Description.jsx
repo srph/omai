@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleResolverMixin} from 'radium';
+import {StyleResolverMixin, MatchMediaItem} from 'radium';
 
 var Description = React.createClass({
-  mixins: [StyleResolverMixin],
+  mixins: [StyleResolverMixin, MatchMediaItem],
 
   render() {
     var styles = {
@@ -12,7 +12,13 @@ var Description = React.createClass({
 
         padding: '10px 5px',
         backgroundColor: '#fff',
-        boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)'
+        boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
+
+        mediaQueries: [{
+          sm: {
+            padding: '15px 10px'
+          }
+        }]
       }),
 
       'box.caret': {
