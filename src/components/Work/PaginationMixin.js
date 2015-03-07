@@ -3,11 +3,14 @@ import _data from './data';
 
 // Limit per page
 var _limit = 5;
-var _splitted = split(_data, _data.length % _limit);
+var _count = _data.length % _limit; // Page count
+var _splitted = split(_data, _count); // Split to n count
+
+console.log(_splitted);
 
 export default {
   getInitialState() {
-    return { data: [], page: 0, /* next, previous, isLoading */ };
+    return { data: [], page: 0 /* next, previous, isLoading */ };
   },
 
   /**
@@ -23,15 +26,14 @@ export default {
   _paginate() {
     // Enable `isLoading` flag to enable all
     // loaders, and disable stuff
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: true }, () => {
+      var {data, page} = this.state;
 
-    var {data, page} = this.state;
-    var next = page + 1;
-    var previous = page - 1;
+      _splitted[++page-1].forEach( item => { data.push(item); });
+      console.log(data);
 
-    _splitted[next].forEach( item => data.push(item) );
-
-    // Update the data, increase the page count, and load!
-    this.setState({ data, next: next + 1, previous: page, page: next, isLoading: false });
+      // Update the data, increase the page count, and load!
+      this.setState({ data, page, isLoading: false, isDisabled: page == _count });
+    });
   }
 }

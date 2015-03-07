@@ -2,6 +2,9 @@ import React from 'react';
 
 import timeout from '../../utils/timeout';
 
+var _promise = null; // Promise flag
+var _body = document.body;
+
 var InfiniteScroll = React.createClass({
   propTypes: {
     /**
@@ -42,18 +45,36 @@ var InfiniteScroll = React.createClass({
     return { disabled: false, threshold: 250, throttle: 250 };
   },
 
-  getInitialState() {
-    return {
-      /**
-       * Our promise flag.
-       */
-      promise: null
-    };
+  /**
+   * Run `forceUpdate` when the window
+   * resizes, so the bottom is still properly calculated
+   */
+  componentDidMount() {
+    window.addEventListener('scroll', this._handleScroll);
+    window.addEventListener('onresize', this._handleWindowResize);
+  },
+
+  /**
+   * Unmount our `forceUpdate` bind
+   */
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._handleScroll);
+    window.removeEventListener('onresize', this._handleWindowResize);
+  },
+
+  /**
+   * Handles our window resize. This function
+   * simply executes `forceUpdate`
+   */
+  _handleWindowResize(evt) {
+    this.forceUpdate();
   },
 
   render() {
+    var { disabled, callback, threshold, throttle, ...other } = this.props;    
+    
     return (
-      <div {...props}>
+      <div {...other}>
         {this.props.children}
       </div>
     );
@@ -63,12 +84,24 @@ var InfiniteScroll = React.createClass({
    * Handles infinite scrolling accordingly
    */
   _handleScroll(evt) {
-    var { promise } = this.state;
     var { callback, disabled, threshold, throttle } = this.props;
 
-    if ( disabled === true || promise !== null ) return;
+    var height = _body.clientHeight;
+    var scroll = _body.scrollTop;
+    var bottom = _body.scrollHeight;
 
-    promise = timeout(callback, throttle).finally( => this.setState({ promise: null }) );
-    this.setState({ promise: promise });
+    if ( disabled === true || _promise !== null || scroll + threshold < bottom - height ) return;
+
+    console.log('xx');
+    _promise = timeout(throttle).then(() => {
+      console.log(callback());
+      // We should be using `finally`, but es6-promise unfortunately
+      // does not support this. Since we're not actually doing any
+      // async code (and which could fail), let's just use then. Overhead
+      // just to be arrogant
+      Promise.resolve(callback()).then(() => { _promise = null; });
+    })
   }
 });
+
+export default InfiniteScroll;

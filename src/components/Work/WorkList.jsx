@@ -1,6 +1,8 @@
 import React from 'react/addons';
 var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
+import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
+
 import PaginationMixin from './PaginationMixin';
 import WorkItem from './WorkItem';
 
@@ -10,6 +12,7 @@ var WorkList = React.createClass({
   mixins: [PaginationMixin],
 
   render() {
+    var { isLoading, isDisabled } = this.state;
     var style = { marginBottom: 20 };
     var splitted = split(this.state.data);
 
@@ -19,7 +22,7 @@ var WorkList = React.createClass({
           My Work
         </h2>
 
-        <section>
+        <InfiniteScroll callback={this._paginate} disabled={isLoading || isDisabled}>
           <div className="six columns">
             <CSSTransitionGroup transitionName="a">
               {splitted[0].map((data, i) => {
@@ -35,7 +38,7 @@ var WorkList = React.createClass({
               })}
             </CSSTransitionGroup>
           </div>
-        </section>
+        </InfiniteScroll>
       </div>
     );
   }

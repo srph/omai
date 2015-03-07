@@ -1,4 +1,5 @@
-import "es6-promise".polyfill();
+import {polyfill} from "es6-promise";
+polyfill();
 
 import React from 'react/addons';
 var CSSTransitionGroup = React.addons.CSSTransitionGroup;
