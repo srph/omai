@@ -2,7 +2,7 @@ export default [
   {
     title: 'e-dental',
     description: 'IT-FA22 EDMS, built with Laravel',
-    thumbnail: '',
+    thumbnail: 'e-dental.png',
     url: 'https://github.com/srph/e-dental'
   },
   {
