@@ -1,3 +1,9 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
 /**
  *
  */
@@ -67,4 +73,35 @@ h4, h5, h6 {
 
 .a-leave.see-work-btn-leave-active {
 	opacity: 0.1;
+}
+
+/**
+ * Grid from Skeleton CSS
+ */
+.column,
+.columns {
+  width: 100%;
+  float: left;
+}
+
+@media(min-width: 768px) {
+  .column,
+  .columns { margin-left: 4%; }
+  
+  .column:first-child,
+  .columns:first-child { margin-left: 0;}
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns          	           { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
 }

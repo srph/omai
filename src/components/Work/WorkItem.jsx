@@ -9,12 +9,21 @@ var WorkItem = React.createClass({
   },
 
   render() {
-    var data = this.props.data;
+    var {data} = this.props;
+    var style = {
+      'box': {
+        padding: 15,
+        background: '#fff',
+        boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
+        borderRadius: 6
+      }
+    };
 
     return (
-      <article>
+      <article className="six columns" style={style.box}>
+        <img src={data.thumbnail} />
         <h2>{data.title}</h2>
-        <p>{data.description}</p>
+        <p className="u-text-light">{data.description}</p>
       </article>
     );
   }
