@@ -3,6 +3,10 @@ import {Promise} from 'es6-promise';
 /**
  * A promisified `setTimeout`
  *
+ * @example
+ * import timeout from './timeout';
+ * timeout(1000).then(function() { return x; })
+ *
  * @see setTimeout
  * @see Promise (ES6)
  * @params {function} callback callback
