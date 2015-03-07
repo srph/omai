@@ -6,8 +6,6 @@ var _limit = 5;
 var _count = _data.length % _limit; // Page count
 var _splitted = split(_data, _count); // Split to n count
 
-console.log(_splitted);
-
 export default {
   getInitialState() {
     return { data: [], page: 0 /* next, previous, isLoading */ };

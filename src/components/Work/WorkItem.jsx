@@ -21,12 +21,17 @@ var WorkItem = React.createClass({
         textDecoration: 'none'
       },
 
+      'img': {
+        maxHeight: 150,
+        width: '100%'
+      },
+
       'description': { lineHeight: '1.5' }
     };
 
     return (
       <a href={data.url} target="_blank" style={style.box}>
-        <img src={data.thumbnail} />
+        { data.thumbnail == undefined ? '' : <img src={data.thumbnail} style={style.img} /> }
         <h2 className="u-color-highlight-alt">{data.title}</h2>
         <p className="u-text-light" style={style.description}>{data.description}</p>
       </a>
