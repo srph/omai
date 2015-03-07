@@ -42,10 +42,18 @@ h4, h5, h6 {
 }
 
 /**
+ *
+ */
+a {
+  color: #93a2a6;
+}
+
+/**
  * Utility classes
  */
 .u-color-highlight { color: #ff5050; }
 .u-color-highlight-alt { color: #090909; }
+.u-color-default { color: #93a2a6; }
  
  
  /* Text Align */
