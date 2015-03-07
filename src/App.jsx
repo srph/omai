@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react/addons';
+var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 /* Second-level components */
 import Container from './components/Container/Container';
@@ -28,7 +29,10 @@ var App = React.createClass({
     return (
       <Container>
         <Profile active={active} activationHandler={activate} />
-        { active ? <WorkList /> : '' }
+
+        <CSSTransitionGroup transitionName="a">
+          { active ? <WorkList /> : '' }
+        </CSSTransitionGroup>
       </Container>
     );
   },

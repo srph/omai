@@ -13,17 +13,20 @@ var WorkItem = React.createClass({
     var style = {
       'box': {
         padding: 15,
+        marginBottom: 20,
         background: '#fff',
         boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
         borderRadius: 6
-      }
+      },
+
+      'description': { lineHeight: '1.5' }
     };
 
     return (
-      <article className="six columns" style={style.box}>
+      <article style={style.box}>
         <img src={data.thumbnail} />
-        <h2>{data.title}</h2>
-        <p className="u-text-light">{data.description}</p>
+        <h2 className="u-color-highlight-alt">{data.title}</h2>
+        <p className="u-text-light" style={style.description}>{data.description}</p>
       </article>
     );
   }

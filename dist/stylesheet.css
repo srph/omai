@@ -67,13 +67,18 @@ h4, h5, h6 {
 
 /* Some Animations */
 .a-leave {
-	opacity: 0;
+	opacity: 1;
 	transition: all .35s;
 }
 
-.a-leave.see-work-btn-leave-active {
-	opacity: 0.1;
+.a-leave.a-leave-active { opacity: 0.1; }
+
+.a-enter {
+  opacity: 0.1;
+  transition: all .35s;
 }
+
+.a-enter.a-enter-active { opacity: 1; }
 
 /**
  * Grid from Skeleton CSS
