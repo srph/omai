@@ -1,15 +1,18 @@
 import React from 'react/addons';
 var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
+import PaginationMixin from './PaginationMixin';
 import WorkItem from './WorkItem';
-import list from './data';
 
 import split from '../../utils/split';
 
 var WorkList = React.createClass({
+  mixins: [PaginationMixin],
+
   render() {
     var style = { marginBottom: 20 };
-    var splitted = split(list);
+    var splitted = split(this.state.data);
+
     return (
       <div>
         <h2 className="u-color-highlight-alt u-text-center" style={style}>
