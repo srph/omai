@@ -24,16 +24,19 @@ export default {
    * to the next page
    */
   _paginate() {
-    // Enable `isLoading` flag to enable all
-    // loaders, and disable stuff
-    this.setState({ isLoading: true }, () => {
-      var {data, page} = this.state;
+    return new Promise( resolve => {
+      // Enable `isLoading` flag to enable all
+      // loaders, and disable stuff
+      this.setState({ isLoading: true }, () => {
+        var {data, page} = this.state;
 
-      _splitted[++page-1].forEach( item => { data.push(item); });
-      console.log(data);
+        _splitted[++page-1].forEach( (item) => { data.push(item); });
 
-      // Update the data, increase the page count, and load!
-      this.setState({ data, page, isLoading: false, isDisabled: page == _count });
-    });
+        // Update the data, increase the page count, and load!
+        this.setState({ data, page, isLoading: false, isDisabled: page == _count }, () => {
+          resolve();
+        });
+      });
+    }.bind(this));
   }
 }

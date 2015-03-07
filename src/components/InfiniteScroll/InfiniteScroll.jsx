@@ -94,7 +94,6 @@ var InfiniteScroll = React.createClass({
 
     console.log('xx');
     _promise = timeout(throttle).then(() => {
-      console.log(callback());
       // We should be using `finally`, but es6-promise unfortunately
       // does not support this. Since we're not actually doing any
       // async code (and which could fail), let's just use then. Overhead
