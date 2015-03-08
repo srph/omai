@@ -1520,7 +1520,7 @@
 	    return React.createElement(
 	      "a",
 	      { href: data.url, target: "_blank", style: style.box },
-	      data.thumbnail == undefined ? "" : React.createElement("img", { src: "/dist/thumbs/" + data.thumbnail, style: style.img }),
+	      data.thumbnail == undefined ? "" : React.createElement("img", { src: "dist/thumbs/" + data.thumbnail, style: style.img }),
 	      React.createElement(
 	        "h2",
 	        { className: "u-color-highlight-alt" },
