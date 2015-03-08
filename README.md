@@ -13,6 +13,9 @@ Flat-swaggish website for me
 
 [![omai_by_seraphipod-d8joyrn](https://cloud.githubusercontent.com/assets/5093058/6418421/ee0535d8-beef-11e4-87d6-03efb4ad3ba2.png)](http://seraphipod.deviantart.com/art/omai-516806915)
 
+[![omai-item](https://cloud.githubusercontent.com/assets/5093058/6545469/e6911c88-c5c3-11e4-8bd9-c0e23ae9b23e.png)
+](http://seraphipod.deviantart.com/art/omai-work-item-518802626?ga_submit_new=10%253A1425811667)
+
 ## Color Schemes
 
 | Hex         | Preview           |
