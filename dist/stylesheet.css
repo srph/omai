@@ -127,14 +127,14 @@ a {
   font-size: 10px;
   margin: 5em auto;
   text-indent: -9999em;
-  width: 64px;
-  height: 64px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -moz-linear-gradient(left, #ff5050 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ff5050 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ff5050 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ff5050 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ff5050 10%, rgba(255, 255, 255, 0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -150,7 +150,7 @@ a {
   content: '';
 }
 .loader:after {
-  background: #ff5050;
+  background: #f1f3f5;
   width: 75%;
   height: 75%;
   border-radius: 50%;

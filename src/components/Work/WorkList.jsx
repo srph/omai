@@ -20,7 +20,7 @@ var WorkList = React.createClass({
           My Work
         </h2>
 
-        <InfiniteScroll callback={this._paginate} disabled={isLoading || isDisabled} className="u-clearfix" throttle={5000}>
+        <InfiniteScroll callback={this._paginate} disabled={isLoading || isDisabled} className="u-clearfix">
           <div className="six columns">
             <CSSTransitionGroup transitionName="a">
               {splitted[0].map((data, i) => {
@@ -40,6 +40,10 @@ var WorkList = React.createClass({
 
         <CSSTransitionGroup transitionName="a">
           { isLoading ? <div className="loader"></div> : '' }
+        </CSSTransitionGroup>
+
+        <CSSTransitionGroup transitionName="a">
+          { isDisabled ? <div className="u-text-center u-text-light">Fin</div> : '' }
         </CSSTransitionGroup>
       </div>
     );

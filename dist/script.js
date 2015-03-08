@@ -204,7 +204,7 @@
 	      ),
 	      React.createElement(
 	        InfiniteScroll,
-	        { callback: this._paginate, disabled: isLoading || isDisabled, className: "u-clearfix", throttle: 5000 },
+	        { callback: this._paginate, disabled: isLoading || isDisabled, className: "u-clearfix" },
 	        React.createElement(
 	          "div",
 	          { className: "six columns" },
@@ -232,6 +232,15 @@
 	        CSSTransitionGroup,
 	        { transitionName: "a" },
 	        isLoading ? React.createElement("div", { className: "loader" }) : ""
+	      ),
+	      React.createElement(
+	        CSSTransitionGroup,
+	        { transitionName: "a" },
+	        isDisabled ? React.createElement(
+	          "div",
+	          { className: "u-text-center u-text-light" },
+	          "Fin"
+	        ) : ""
 	      )
 	    );
 	  }

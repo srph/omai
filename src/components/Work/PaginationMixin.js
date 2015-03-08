@@ -28,7 +28,7 @@ export default {
       this.setState({ isLoading: true }, () => {
         var {data, page} = this.state;
 
-        _splitted[++page-1].forEach( (item) => { data.push(item); });
+        _splitted[(++page) - 1].forEach( (item) => { data.push(item); });
 
         // Update the data, increase the page count, and load!
         this.setState({ data, page, isLoading: false, isDisabled: page == _count }, () => {
