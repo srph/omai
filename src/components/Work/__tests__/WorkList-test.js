@@ -1,12 +1,14 @@
-var src = '../WorkList';
-jest.dontMock(src);
+// var src = '../WorkList';
+// jest.dontMock(src);
+// var WorkList = require(src);
 
-var Promise = require('es6-promise').Promise;
-var React = require('react/addons');
-var TestUtils = React.addons.TestUtils
-var WorkList = require(src);
-
-describe('WorkList component', function() {
-  it('should paginate to the next page');
-  it('should be disabled when current page is equal to the # of pages');
-});
+// describe('WorkList component', function() {
+//   var Promise, React, TestUtils;
+//   beforeEach(function() {
+//     // Promise = require('es6-promise').Promise;
+//     // React = require('react/addons');
+//     // TestUtils = React.addons.TestUtils;
+//   })
+//   it('should paginate to the next page');
+//   it('should be disabled when current page is equal to the # of pages');
+// });

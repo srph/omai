@@ -18,8 +18,8 @@ module.exports = {
     // So we can `require` files without specifying file ext
     // e.g., require('./yolo.es6') => require('./yolo');
     extensions: ['', '.js', '.json', '.jsx', '.es6']
-  }
-  // plugins: [
-  //   new webpack.optimize.UglifyJsPlugin({ mangle: true, compress: true })
-  // ]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({ mangle: true, compress: true })
+  ]
 };
