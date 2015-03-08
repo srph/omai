@@ -40,7 +40,7 @@ export default [
     title: 'co-app',
     description: `A company or corporation database of its employees
      and their respective projects, built with Laravel and ReactJS`,
-    thumbnail: '',
+    thumbnail: 'co-app.png',
     url: 'https://github.com/srph/co-app'
   },
 ];
