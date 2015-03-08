@@ -13,7 +13,7 @@ var DisplayPicture = React.createClass({
 
     return (
       <div className="u-text-center">
-        <img src="/dist/img/dp.jpg" style={style} />
+        <img src="dist/img/dp.jpg" style={style} />
       </div>
     );
   }

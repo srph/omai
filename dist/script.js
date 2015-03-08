@@ -1620,7 +1620,7 @@
 	    return React.createElement(
 	      "div",
 	      { className: "u-text-center" },
-	      React.createElement("img", { src: "/dist/img/dp.jpg", style: style })
+	      React.createElement("img", { src: "dist/img/dp.jpg", style: style })
 	    );
 	  }
 	});
