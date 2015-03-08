@@ -23,7 +23,6 @@ var WorkItem = React.createClass({
       },
 
       'img': {
-        maxHeight: 150,
         width: '100%'
       },
 
