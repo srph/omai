@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from '../Img';
 
 var WorkItem = React.createClass({
   propTypes: {
@@ -31,7 +32,7 @@ var WorkItem = React.createClass({
 
     return (
       <a href={data.url} target="_blank" style={style.box}>
-        { data.thumbnail == undefined ? '' : <img src={`dist/thumbs/${data.thumbnail}`} style={style.img} /> }
+        { data.thumbnail == undefined ? '' : <Img src={`dist/thumbs/${data.thumbnail}`} style={style.img} /> }
         <h2 className="u-color-highlight-alt">{data.title}</h2>
         <p className="u-text-light" style={style.description}>{data.description}</p>
       </a>

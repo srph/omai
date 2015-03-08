@@ -204,7 +204,7 @@
 	      ),
 	      React.createElement(
 	        InfiniteScroll,
-	        { callback: this._paginate, disabled: isLoading || isDisabled },
+	        { callback: this._paginate, disabled: isLoading || isDisabled, className: "u-clearfix", throttle: 5000 },
 	        React.createElement(
 	          "div",
 	          { className: "six columns" },
@@ -227,6 +227,11 @@
 	            })
 	          )
 	        )
+	      ),
+	      React.createElement(
+	        CSSTransitionGroup,
+	        { transitionName: "a" },
+	        isLoading ? React.createElement("div", { className: "loader" }) : ""
 	      )
 	    );
 	  }
@@ -1396,8 +1401,7 @@
 	
 	    if (disabled === true || _promise !== null || scroll + threshold < bottom - height) {
 	      return;
-	    }console.log("xx");
-	    _promise = timeout(throttle).then(function () {
+	    }_promise = timeout(throttle).then(function () {
 	      // We should be using `finally`, but es6-promise unfortunately
 	      // does not support this. Since we're not actually doing any
 	      // async code (and which could fail), let's just use then. Overhead
@@ -1433,7 +1437,7 @@
 	
 	module.exports = {
 	  getInitialState: function getInitialState() {
-	    return { data: [], page: 0 /* next, previous, isLoading */ };
+	    return { data: [], page: 0 };
 	  },
 	
 	  /**
@@ -1485,6 +1489,8 @@
 	
 	var React = _interopRequire(__webpack_require__(/*! react */ 11));
 	
+	var Img = _interopRequire(__webpack_require__(/*! ../Img */ 219));
+	
 	var WorkItem = React.createClass({
 	  displayName: "WorkItem",
 	
@@ -1520,7 +1526,7 @@
 	    return React.createElement(
 	      "a",
 	      { href: data.url, target: "_blank", style: style.box },
-	      data.thumbnail == undefined ? "" : React.createElement("img", { src: "dist/thumbs/" + data.thumbnail, style: style.img }),
+	      data.thumbnail == undefined ? "" : React.createElement(Img, { src: "dist/thumbs/" + data.thumbnail, style: style.img }),
 	      React.createElement(
 	        "h2",
 	        { className: "u-color-highlight-alt" },
@@ -1603,24 +1609,25 @@
 	
 	var React = _interopRequire(__webpack_require__(/*! react */ 11));
 	
-	var StyleResolverMixin = __webpack_require__(/*! radium */ 5).StyleResolverMixin;
+	var Img = _interopRequire(__webpack_require__(/*! ../Img */ 219));
 	
+	/**
+	 * Just a component for the DisplayPicture
+	 */
 	var DisplayPicture = React.createClass({
 	  displayName: "DisplayPicture",
 	
-	  mixins: [StyleResolverMixin],
-	
 	  render: function render() {
-	    var style = this.buildStyles({
+	    var style = {
 	      height: 64,
 	      width: 64,
 	      borderRadius: "50%"
-	    });
+	    };
 	
 	    return React.createElement(
 	      "div",
 	      { className: "u-text-center" },
-	      React.createElement("img", { src: "dist/img/dp.jpg", style: style })
+	      React.createElement(Img, { src: "dist/img/dp.jpg", style: style })
 	    );
 	  }
 	});
@@ -25120,6 +25127,76 @@
 	    setTimeout(resolve, throttle);
 	  });
 	};
+
+/***/ },
+/* 219 */
+/*!********************************!*\
+  !*** ./src/components/Img.jsx ***!
+  \********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+	
+	var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var React = _interopRequire(__webpack_require__(/*! react */ 11));
+	
+	/**
+	 * Self removing <img> when the `src` or image
+	 * does not load or is unavailable.
+	 */
+	var Img = React.createClass({
+	  displayName: "Img",
+	
+	  propTypes: {
+	    /**
+	     * img alt
+	     */
+	    alt: React.PropTypes.string,
+	
+	    /**
+	     * img 
+	     */
+	    src: React.PropTypes.string
+	  },
+	
+	  /**
+	   * Force update so `refs` will be available
+	   */
+	  componentDidMount: function componentDidMount() {
+	    this.forceUpdate();
+	  },
+	
+	  render: function render() {
+	    var _props = this.props;
+	    var alt = _props.alt;
+	    var src = _props.src;
+	
+	    var other = _objectWithoutProperties(_props, ["alt", "src"]);
+	
+	    return React.createElement(
+	      "span",
+	      { ref: "container" },
+	      React.createElement("img", _extends({ src: src,
+	        alt: alt,
+	        onError: this._handleError
+	      }, other))
+	    );
+	  },
+	
+	  /**
+	   * Remove itself when image is not found
+	   */
+	  _handleError: function _handleError() {
+	    this.refs.container.getDOMNode().remove();
+	  }
+	});
+	
+	module.exports = Img;
 
 /***/ }
 /******/ ]);

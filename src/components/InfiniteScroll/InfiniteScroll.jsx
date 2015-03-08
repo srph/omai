@@ -92,7 +92,6 @@ var InfiniteScroll = React.createClass({
 
     if ( disabled === true || _promise !== null || scroll + threshold < bottom - height ) return;
 
-    console.log('xx');
     _promise = timeout(throttle).then(() => {
       // We should be using `finally`, but es6-promise unfortunately
       // does not support this. Since we're not actually doing any

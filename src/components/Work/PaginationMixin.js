@@ -8,7 +8,7 @@ var _splitted = split(_data, _count); // Split to n count
 
 export default {
   getInitialState() {
-    return { data: [], page: 0 /* next, previous, isLoading */ };
+    return { data: [], page: 0 };
   },
 
   /**

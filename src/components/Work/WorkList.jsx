@@ -2,10 +2,8 @@ import React from 'react/addons';
 var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
-
 import PaginationMixin from './PaginationMixin';
 import WorkItem from './WorkItem';
-
 import split from '../../utils/split';
 
 var WorkList = React.createClass({
@@ -22,7 +20,7 @@ var WorkList = React.createClass({
           My Work
         </h2>
 
-        <InfiniteScroll callback={this._paginate} disabled={isLoading || isDisabled}>
+        <InfiniteScroll callback={this._paginate} disabled={isLoading || isDisabled} className="u-clearfix" throttle={5000}>
           <div className="six columns">
             <CSSTransitionGroup transitionName="a">
               {splitted[0].map((data, i) => {
@@ -39,6 +37,10 @@ var WorkList = React.createClass({
             </CSSTransitionGroup>
           </div>
         </InfiniteScroll>
+
+        <CSSTransitionGroup transitionName="a">
+          { isLoading ? <div className="loader"></div> : '' }
+        </CSSTransitionGroup>
       </div>
     );
   }

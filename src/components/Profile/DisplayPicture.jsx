@@ -1,19 +1,20 @@
 import React from 'react';
-import {StyleResolverMixin} from 'radium';
+import Img from '../Img';
 
+/**
+ * Just a component for the DisplayPicture
+ */
 var DisplayPicture = React.createClass({
-  mixins: [StyleResolverMixin],
-
   render() {
-    var style = this.buildStyles({
+    var style = {
       height: 64,
       width: 64,
       borderRadius: '50%'
-    });
+    };
 
     return (
       <div className="u-text-center">
-        <img src="dist/img/dp.jpg" style={style} />
+        <Img src="dist/img/dp.jpg" style={style} />
       </div>
     );
   }
