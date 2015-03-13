@@ -1,4 +1,6 @@
 var webpack = require('webpack');
+var mode = process.env.MODE;
+var noop = function() { }
 
 module.exports = {
   entry: './src/App.jsx',
@@ -20,6 +22,6 @@ module.exports = {
     extensions: ['', '.js', '.json', '.jsx', '.es6']
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({ mangle: true, compress: true })
+    mode !== undefined && mode == "production" ? new webpack.optimize.UglifyJsPlugin({ mangle: true, compress: true }) : noop
   ]
 };
