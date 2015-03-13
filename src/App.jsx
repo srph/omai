@@ -39,7 +39,7 @@ var App = React.createClass({
 
         <h5 className="u-text-center u-fira -regular" style={{ marginTop: 25 }}>
           <a href="//github.com/srph/omai" className="u-color-highlight">Omai</a>&#8202;
-          &copy; 2015+,&#8202;
+          &copy; 2015+, &#8202;
           <a href="//github.com/srph/omai" className="u-color-highlight">Kier Borromeo (srph)</a>.
         </h5>
       </Container>
