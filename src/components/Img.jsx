@@ -3,15 +3,11 @@ import React from 'react';
 /**
  * Self removing <img> when the `src` or image
  * does not load or is unavailable.
+ *
+ * Usage: (tip: it's how you use the <img> tag, basically)
+ * <Img src={} alt={} ../..>
  */
 var Img = React.createClass({
-  propTypes: {
-    /**
-     * img 
-     */
-    src: React.PropTypes.string.isRequired
-  },
-
   /**
    * Force update so `refs` will be available
    */
@@ -20,14 +16,9 @@ var Img = React.createClass({
   },
 
   render() {
-    var { src, ...other} = this.props;
-
     return (
       <span ref="container">
-        <img src={src}
-          onError={this._handleError}
-          style={{backgroundColor:'gray'}}
-          {...other} />
+        <img {...other} onError={this._handleError} />
       </span>
     )
   },
