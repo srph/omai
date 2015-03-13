@@ -18,7 +18,7 @@ var Img = React.createClass({
   render() {
     return (
       <span ref="container">
-        <img {...other} onError={this._handleError} />
+        <img {...this.props} onError={this._handleError} />
       </span>
     )
   },

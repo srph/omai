@@ -26,7 +26,7 @@ var App = React.createClass({
   },
 
   render() {
-    var active = this.state.active;
+    var { active } = this.state;
     var activate = this._activate;
 
     return (
@@ -36,6 +36,12 @@ var App = React.createClass({
         <CSSTransitionGroup transitionName="a">
           { active ? <WorkList /> : '' }
         </CSSTransitionGroup>
+
+        <h5 className="u-text-center u-fira -regular" style={{ marginTop: 25 }}>
+          <a href="//github.com/srph/omai" className="u-color-highlight">Omai</a>&#8202;
+          &copy; 2015+,&#8202;
+          <a href="//github.com/srph/omai" className="u-color-highlight">Kier Borromeo (srph)</a>.
+        </h5>
       </Container>
     );
   },

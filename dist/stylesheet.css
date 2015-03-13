@@ -48,7 +48,11 @@ h4, h5, h6 {
  */
 a {
   color: #93a2a6;
+  text-decoration: none;
 }
+
+a:hover,
+a:focus { text-decoration: underline; }
 
 /**
  * Utility classes
