@@ -8,7 +8,9 @@
  *
  */
 body {
-	font-family: 'Lato', sans-serif, serif;
+	font-family: 'fira-sans-2', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 	background-color: #f1f3f5;
 	color: #93a2a6;
 }
@@ -65,6 +67,11 @@ a {
 .u-text-light { font-weight: 300; }
 .u-text-normal { font-weight: 500; }
 .u-text-bold, strong { font-weight: 600; }
+
+.u-fira { font-family: 'fira-sans-2'; }
+.u-fira > .-normal, .u-fira.-normal { font-weight: 500; }
+.u-fira > .-regular, .u-fira.-regular { font-weight: 600; }
+.u-fira > .-bold, .u-fira.-bold { font-weight: 700; }
 
 .u-text-uppercase { text-transform: uppercase; }
 

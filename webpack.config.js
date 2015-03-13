@@ -1,6 +1,4 @@
 var webpack = require('webpack');
-var mode = process.env.MODE;
-var noop = function() { }
 
 module.exports = {
   entry: './src/App.jsx',
@@ -20,8 +18,5 @@ module.exports = {
     // So we can `require` files without specifying file ext
     // e.g., require('./yolo.es6') => require('./yolo');
     extensions: ['', '.js', '.json', '.jsx', '.es6']
-  },
-  plugins: [
-    mode !== undefined && mode == "production" ? new webpack.optimize.UglifyJsPlugin({ mangle: true, compress: true }) : noop
-  ]
+  }
 };

@@ -42,5 +42,5 @@ export default [
      and their respective projects, built with Laravel and ReactJS`,
     thumbnail: 'co-app.png',
     url: 'https://github.com/srph/co-app'
-  },
+  }
 ];

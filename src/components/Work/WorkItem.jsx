@@ -13,28 +13,32 @@ var WorkItem = React.createClass({
     var {data} = this.props;
     var style = {
       'box': {
-        display: 'block',
-        padding: 15,
         marginBottom: 20,
         background: '#fff',
         boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
         borderRadius: 6,
-        textDecoration: 'none'
+        textDecoration: 'none',
+        display: 'hidden'
       },
 
-      'img': {
-        width: '100%'
-      },
+      'img.container': { display: 'block' },
+      'img': { width: '100%' },
 
+      'text': { padding: 15 },
       'description': { lineHeight: '1.5' }
     };
 
     return (
-      <a href={data.url} target="_blank" style={style.box}>
-        { data.thumbnail == undefined ? '' : <Img src={`dist/thumbs/${data.thumbnail}`} style={style.img} /> }
-        <h2 className="u-color-highlight-alt">{data.title}</h2>
-        <p className="u-text-light" style={style.description}>{data.description}</p>
-      </a>
+      <div style={style.box}>
+        <a href={data.url} target="_blank" style={style['img.container']}>
+          { data.thumbnail == undefined ? '' : <Img src={'https://mir-cdn.behance.net/v1/rendition/projects/202/32574d24270697.54fa40784145b.png'} style={style.img} alt={`${data.title} thumbnail`} /> }
+        </a>
+
+        <div style={style.text}>
+          <h5 className="u-color-highlight-alt u-fira -regular">{data.title}</h5>
+          <p style={style.description}>{data.description}</p>
+        </div>
+      </div>
     );
   }
 });

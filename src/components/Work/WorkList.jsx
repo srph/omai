@@ -10,9 +10,9 @@ var WorkList = React.createClass({
   mixins: [PaginationMixin],
 
   render() {
-    var { isLoading, isDisabled } = this.state;
+    var { data, isLoading, isDisabled } = this.state;
     var style = { marginBottom: 20 };
-    var splitted = split(this.state.data);
+    var splitted = split(data);
 
     return (
       <div>
@@ -43,7 +43,7 @@ var WorkList = React.createClass({
         </CSSTransitionGroup>
 
         <CSSTransitionGroup transitionName="a">
-          { isDisabled ? <div className="u-text-center u-text-light">Fin</div> : '' }
+          { isDisabled ? <div className="u-text-center u-text-light">...</div> : '' }
         </CSSTransitionGroup>
       </div>
     );

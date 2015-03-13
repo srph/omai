@@ -1,4 +1,5 @@
 import split from '../../utils/split';
+import timeout from '../../utils/timeout';
 import _data from './data';
 
 // Limit per page
@@ -22,7 +23,7 @@ export default {
    * to the next page
    */
   _paginate() {
-    return new Promise( resolve => {
+    return new Promise( (resolve, reject) => {
       // Enable `isLoading` flag to enable all
       // loaders, and disable stuff
       this.setState({ isLoading: true }, () => {
