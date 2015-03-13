@@ -1,6 +1,6 @@
 import split from '../../utils/split';
 import timeout from '../../utils/timeout';
-import _data from './data';
+import _data from '../../data';
 
 // Limit per page
 var _limit = 5;

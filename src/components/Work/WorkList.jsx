@@ -3,7 +3,7 @@ var CSSTransitionGroup = React.addons.CSSTransitionGroup;
 
 import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
 import PaginationMixin from './PaginationMixin';
-import WorkItem from './WorkItem';
+import WorkItem from './WorkItem/WorkItem';
 import split from '../../utils/split';
 
 var WorkList = React.createClass({

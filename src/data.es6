@@ -10,7 +10,6 @@ export default [
     description: 'Conditionally concatenate strings',
     thumbnail: '',
     url: 'https://github.com/srph/str-concat.js'
-
   },
   {
     title: 'e-dental-yolo',

@@ -130,7 +130,7 @@
 	
 	var PaginationMixin = _interopRequire(__webpack_require__(/*! ./PaginationMixin */ 12));
 	
-	var WorkItem = _interopRequire(__webpack_require__(/*! ./WorkItem */ 13));
+	var WorkItem = _interopRequire(__webpack_require__(/*! ./WorkItem/WorkItem */ 220));
 	
 	var split = _interopRequire(__webpack_require__(/*! ../../utils/split */ 14));
 	
@@ -1626,7 +1626,7 @@
 	
 	var timeout = _interopRequire(__webpack_require__(/*! ../../utils/timeout */ 25));
 	
-	var _data = _interopRequire(__webpack_require__(/*! ./data */ 22));
+	var _data = _interopRequire(__webpack_require__(/*! ../../data */ 222));
 	
 	// Limit per page
 	var _limit = 5;
@@ -1675,79 +1675,7 @@
 	};
 
 /***/ },
-/* 13 */
-/*!******************************************!*\
-  !*** ./src/components/Work/WorkItem.jsx ***!
-  \******************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-	
-	var React = _interopRequire(__webpack_require__(/*! react */ 6));
-	
-	var Img = _interopRequire(__webpack_require__(/*! ../Img */ 21));
-	
-	var WorkItem = React.createClass({
-	  displayName: "WorkItem",
-	
-	  propTypes: {
-	    /**
-	     * Data of the item
-	     */
-	    data: React.PropTypes.object
-	  },
-	
-	  render: function render() {
-	    var data = this.props.data;
-	
-	    var style = {
-	      box: {
-	        marginBottom: 20,
-	        background: "#fff",
-	        boxShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-	        borderRadius: 6,
-	        textDecoration: "none",
-	        display: "hidden"
-	      },
-	
-	      "img.container": { display: "block" },
-	      img: { width: "100%" },
-	
-	      text: { padding: 15 },
-	      description: { lineHeight: "1.5" }
-	    };
-	
-	    return React.createElement(
-	      "div",
-	      { style: style.box },
-	      React.createElement(
-	        "a",
-	        { href: data.url, target: "_blank", style: style["img.container"] },
-	        data.thumbnail == undefined ? "" : React.createElement(Img, { src: "https://mir-cdn.behance.net/v1/rendition/projects/202/32574d24270697.54fa40784145b.png", style: style.img, alt: "" + data.title + " thumbnail" })
-	      ),
-	      React.createElement(
-	        "div",
-	        { style: style.text },
-	        React.createElement(
-	          "h5",
-	          { className: "u-color-highlight-alt u-fira -regular" },
-	          data.title
-	        ),
-	        React.createElement(
-	          "p",
-	          { style: style.description },
-	          data.description
-	        )
-	      )
-	    );
-	  }
-	});
-	
-	module.exports = WorkItem;
-
-/***/ },
+/* 13 */,
 /* 14 */
 /*!****************************!*\
   !*** ./src/utils/split.js ***!
@@ -2411,14 +2339,9 @@
 	
 	  propTypes: {
 	    /**
-	     * img alt
-	     */
-	    alt: React.PropTypes.string,
-	
-	    /**
 	     * img 
 	     */
-	    src: React.PropTypes.string
+	    src: React.PropTypes.string.isRequired
 	  },
 	
 	  /**
@@ -2430,17 +2353,16 @@
 	
 	  render: function render() {
 	    var _props = this.props;
-	    var alt = _props.alt;
 	    var src = _props.src;
 	
-	    var other = _objectWithoutProperties(_props, ["alt", "src"]);
+	    var other = _objectWithoutProperties(_props, ["src"]);
 	
 	    return React.createElement(
 	      "span",
 	      { ref: "container" },
 	      React.createElement("img", _extends({ src: src,
-	        alt: alt,
-	        onError: this._handleError
+	        onError: this._handleError,
+	        style: { backgroundColor: "gray" }
 	      }, other))
 	    );
 	  },
@@ -2456,53 +2378,7 @@
 	module.exports = Img;
 
 /***/ },
-/* 22 */
-/*!**************************************!*\
-  !*** ./src/components/Work/data.es6 ***!
-  \**************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	module.exports = [{
-	  title: "e-dental",
-	  description: "IT-FA22 EDMS, built with Laravel",
-	  thumbnail: "e-dental.png",
-	  url: "https://github.com/srph/e-dental"
-	}, {
-	  title: "str-concat.js",
-	  description: "Conditionally concatenate strings",
-	  thumbnail: "",
-	  url: "https://github.com/srph/str-concat.js"
-	
-	}, {
-	  title: "e-dental-yolo",
-	  description: "IT-FA22 EDMS, built with its own framework",
-	  thumbnail: "",
-	  url: "https://github.com/srph/e-dental-yolo"
-	}, {
-	  title: "order-form",
-	  description: "A take on rstacruz/frontend-exercises, implemented in ReactJS.",
-	  thumbnail: "",
-	  url: "https://github.com/srph/frontend-exercises-order-form-react"
-	}, {
-	  title: "web-app-exercises",
-	  description: "Web app exercises for any language, framework, or implementation",
-	  thumbnail: "",
-	  url: "https://github.com/srph/web-app-exercises"
-	}, {
-	  title: "reflux-flash",
-	  description: "Spawn flash messages with Reflux",
-	  thumbnail: "",
-	  url: "https://github.com/srph/reflux-flash"
-	}, {
-	  title: "co-app",
-	  description: "A company or corporation database of its employees\n     and their respective projects, built with Laravel and ReactJS",
-	  thumbnail: "co-app.png",
-	  url: "https://github.com/srph/co-app"
-	}];
-
-/***/ },
+/* 22 */,
 /* 23 */
 /*!******************************************************!*\
   !*** ./src/components/Profile/Description/Caret.jsx ***!
@@ -25217,6 +25093,204 @@
 	module.exports = toArray;
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! (webpack)/~/node-libs-browser/~/process/browser.js */ 28)))
+
+/***/ },
+/* 220 */
+/*!***************************************************!*\
+  !*** ./src/components/Work/WorkItem/WorkItem.jsx ***!
+  \***************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+	
+	var React = _interopRequire(__webpack_require__(/*! react */ 6));
+	
+	var Thumbnail = _interopRequire(__webpack_require__(/*! ./Thumbnail */ 221));
+	
+	var WorkItem = React.createClass({
+	  displayName: "WorkItem",
+	
+	  propTypes: {
+	    /**
+	     * Data of the item
+	     */
+	    data: React.PropTypes.object
+	  },
+	
+	  render: function render() {
+	    // Shorthand
+	    var _props$data = this.props.data;
+	    var url = _props$data.url;
+	    var title = _props$data.title;
+	    var thumbnail = _props$data.thumbnail;
+	    var description = _props$data.description;
+	
+	    // Element styling
+	    var style = {
+	      box: {
+	        overflow: "hidden",
+	        marginBottom: 20,
+	        background: "#fff",
+	        boxShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
+	        borderRadius: 6,
+	        textDecoration: "none"
+	      }
+	    };
+	
+	    return React.createElement(
+	      "div",
+	      { style: style.box },
+	      thumbnail == undefined ? "" : React.createElement(Thumbnail, { src: thumbnail, url: url, title: title }),
+	      React.createElement(
+	        "div",
+	        { style: { padding: 15 } },
+	        React.createElement(
+	          "h5",
+	          { className: "u-color-highlight-alt u-fira -regular" },
+	          title
+	        ),
+	        React.createElement(
+	          "p",
+	          { style: { lineHeight: "1.5" } },
+	          description
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = WorkItem;
+
+/***/ },
+/* 221 */
+/*!****************************************************!*\
+  !*** ./src/components/Work/WorkItem/Thumbnail.jsx ***!
+  \****************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var React = _interopRequire(__webpack_require__(/*! react */ 6));
+	
+	var _radium = __webpack_require__(/*! radium */ 4);
+	
+	var StyleResolverMixin = _radium.StyleResolverMixin;
+	var BrowserStateMixin = _radium.BrowserStateMixin;
+	
+	var Img = _interopRequire(__webpack_require__(/*! ../../Img */ 21));
+	
+	var Thumbnail = React.createClass({
+	  displayName: "Thumbnail",
+	
+	  /**
+	   * Used for the `hover` state
+	   */
+	  mixins: [StyleResolverMixin, BrowserStateMixin],
+	
+	  propTypes: {
+	    /**
+	     * Thumbnail src (<img src={src})
+	     */
+	    src: React.PropTypes.string.isRequired,
+	
+	    /**
+	     * URL of the thumbnail (<a href={}>)
+	     */
+	    url: React.PropTypes.string.isRequired,
+	
+	    /**
+	     * Title, to be used for the alt
+	     */
+	    title: React.PropTypes.string.isRequired
+	  },
+	
+	  render: function render() {
+	    // Element Styling
+	    var style = this.buildStyles({
+	      width: "100%",
+	      // Border Radius
+	      borderRadiusTopLeft: 6,
+	      borderRadiusTopRight: 6,
+	      // --
+	
+	      // To make the 'lightening' a little smoother
+	      // Since the background is white, setting the
+	      // element to a lower opacity makes it lighter.
+	      // - Captain Obvious
+	      transition: "opacity 0.2s",
+	      states: [{ hover: { opacity: "0.8" } }]
+	    });
+	
+	    // Shorthand
+	    var _props = this.props;
+	    var src = _props.src;
+	    var url = _props.url;
+	    var title = _props.title;
+	
+	    return React.createElement(
+	      "a",
+	      { href: url, target: "_blank" },
+	      React.createElement(Img, _extends({ src: "https://mir-cdn.behance.net/v1/rendition/projects/202/32574d24270697.54fa40784145b.png",
+	        alt: "" + title + " thumbnail"
+	      }, this.getBrowserStateEvents(), {
+	        style: style }))
+	    );
+	  }
+	});
+	
+	module.exports = Thumbnail;
+
+/***/ },
+/* 222 */
+/*!**********************!*\
+  !*** ./src/data.es6 ***!
+  \**********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = [{
+	  title: "e-dental",
+	  description: "IT-FA22 EDMS, built with Laravel",
+	  thumbnail: "e-dental.png",
+	  url: "https://github.com/srph/e-dental"
+	}, {
+	  title: "str-concat.js",
+	  description: "Conditionally concatenate strings",
+	  thumbnail: "",
+	  url: "https://github.com/srph/str-concat.js"
+	}, {
+	  title: "e-dental-yolo",
+	  description: "IT-FA22 EDMS, built with its own framework",
+	  thumbnail: "",
+	  url: "https://github.com/srph/e-dental-yolo"
+	}, {
+	  title: "order-form",
+	  description: "A take on rstacruz/frontend-exercises, implemented in ReactJS.",
+	  thumbnail: "",
+	  url: "https://github.com/srph/frontend-exercises-order-form-react"
+	}, {
+	  title: "web-app-exercises",
+	  description: "Web app exercises for any language, framework, or implementation",
+	  thumbnail: "",
+	  url: "https://github.com/srph/web-app-exercises"
+	}, {
+	  title: "reflux-flash",
+	  description: "Spawn flash messages with Reflux",
+	  thumbnail: "",
+	  url: "https://github.com/srph/reflux-flash"
+	}, {
+	  title: "co-app",
+	  description: "A company or corporation database of its employees\n     and their respective projects, built with Laravel and ReactJS",
+	  thumbnail: "co-app.png",
+	  url: "https://github.com/srph/co-app"
+	}];
 
 /***/ }
 /******/ ]);

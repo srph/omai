@@ -7,14 +7,9 @@ import React from 'react';
 var Img = React.createClass({
   propTypes: {
     /**
-     * img alt
-     */
-    alt: React.PropTypes.string,
-
-    /**
      * img 
      */
-    src: React.PropTypes.string
+    src: React.PropTypes.string.isRequired
   },
 
   /**
@@ -25,13 +20,13 @@ var Img = React.createClass({
   },
 
   render() {
-    var { alt, src, ...other} = this.props;
+    var { src, ...other} = this.props;
 
     return (
       <span ref="container">
         <img src={src}
-          alt={alt}
           onError={this._handleError}
+          style={{backgroundColor:'gray'}}
           {...other} />
       </span>
     )
