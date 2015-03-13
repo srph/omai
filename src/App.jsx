@@ -14,7 +14,7 @@ import Profile from './components/Profile/Profile';
  * https://github.com/FormidableLabs/radium/blob/master/docs/guides/media-queries.md
  */
 import {MatchMediaBase} from 'radium';
-MatchMediaBase.init({ sm: '(min-width: 768px)' });
+MatchMediaBase.init({ xs: '(min-width: 480px)', sm: '(min-width: 768px)' });
 
 var App = React.createClass({
   // MatchMediaBase allows all of this components this descendants

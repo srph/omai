@@ -108,7 +108,7 @@ a:focus { text-decoration: underline; }
   float: left;
 }
 
-@media(min-width: 768px) {
+@media(min-width: 480px) {
   .column,
   .columns { margin-left: 4%; }
   
