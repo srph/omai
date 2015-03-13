@@ -1,12 +1,9 @@
 import React from 'react';
-import {MatchMediaItem} from 'radium';
 
 import Caret from './Caret';
 import SeeWorkButton from './SeeWorkButton';
 
 var Description = React.createClass({
-  mixins: [MatchMediaItem],
-
   propTypes: {
     /**
      * Flag for work (whether active)
