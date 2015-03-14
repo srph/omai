@@ -79,6 +79,12 @@ a:focus { text-decoration: underline; }
 
 .u-text-uppercase { text-transform: uppercase; }
 
+.u-text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Clearfix */
 .u-clearfix::after { content: ""; display: block; clear: both; }
 .u-pull-left: { float: left; }

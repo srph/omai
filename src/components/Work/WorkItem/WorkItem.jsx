@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleResolverMixin, MatchMediaItem } from 'radium';
 import Thumbnail from './Thumbnail';
+import Bar from './Bar';
 
 var WorkItem = React.createClass({
   /**
@@ -17,7 +18,7 @@ var WorkItem = React.createClass({
 
   render() {
     // Shorthand
-    var { url, title, thumbnail, description } = this.props.data;
+    var { tags, url, title, thumbnail, description } = this.props.data;
 
     // Element styling
     var style = {
@@ -45,6 +46,8 @@ var WorkItem = React.createClass({
           <h5 className="u-color-highlight-alt u-fira -regular">{title}</h5>
           <p style={{ lineHeight: '1.5' }}>{description}</p>
         </div>
+
+        { tags !== undefined ? <Bar tags={tags} /> : '' }
       </div>
     );
   }
