@@ -6,9 +6,19 @@ var Container = React.createClass({
 
   render() {
     var style = this.buildStyles({
+      // We'll want to add some padding for small screens.
       padding: '0 15px',
+      // Provides some allowance from the
+      // window's vertical edges, while at the same
+      // time, center our layout
       margin: '25px auto',
-      mediaQueries: [{ sm : { width: 750, marginTop: 35, marginBottom: 35 } }]
+      width: '100%',
+      // 750 will be our max width for large screens.
+      // We'll prefer to use max-width instead of media-queires
+      // since we're only support screen-size `sm`
+      maxWidth: 750,
+
+      mediaQueries: [{ sm : { marginTop: 35, marginBottom: 35 } }]
     });
 
     return (
