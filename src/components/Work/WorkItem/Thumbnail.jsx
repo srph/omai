@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleResolverMixin, BrowserStateMixin, MatchMediaItem } from 'radium';
 
-import Img from '../../Img';
+import Img from '../../Img/Img';
 
 var Thumbnail = React.createClass({
   /**

@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from '../Img';
+import Img from '../Img/Img';
 
 /**
  * Just a component for the DisplayPicture
