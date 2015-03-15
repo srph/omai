@@ -6,7 +6,7 @@
  ▀█▄▀▪▀▀  █▪▀▀▀ ▀  ▀ ▀▀▀
 ```
 
-# omai [![Build Status](https://travis-ci.org/srph/omai.svg?branch=master)](https://travis-ci.org/srph/omai?branch=master) [![Dependencies Status](https://david-dm.org/srph/omai.svg)](https://david-dm.org/srph/reflux-flash.svg) [![devDependency Status](https://david-dm.org/srph/omai/dev-status.svg)](https://david-dm.org/cdnjs/cdnjs#info=devDependencies) [![Author](http://img.shields.io/badge/author-@srph-blue.svg)](http://img.shields.io/badge/author-@srph-blue.svg)
+# omai [![Build Status](https://travis-ci.org/srph/omai.svg?branch=master)](https://travis-ci.org/srph/omai?branch=master) [![Dependencies Status](https://david-dm.org/srph/omai.svg)](https://david-dm.org/srph/omai.svg) [![devDependency Status](https://david-dm.org/srph/omai/dev-status.svg)](https://david-dm.org/cdnjs/cdnjs#info=devDependencies) [![Author](http://img.shields.io/badge/author-@srph-blue.svg)](http://img.shields.io/badge/author-@srph-blue.svg)
 
 Flat-swaggish website for me, built in ReactJS.
 
