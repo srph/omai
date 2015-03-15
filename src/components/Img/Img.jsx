@@ -8,11 +8,10 @@ import React from 'react';
  * <Img src={} alt={} ../..>
  */
 var Img = React.createClass({
-  /**
-   * Force update so `refs` will be available
-   */
-  componentDidMount() {
-    this.forceUpdate();
+  // We'll set `error` to false to load and display the image,
+  // only will it be true when an error occurs
+  getInitialState() { 
+    return { error: false }
   },
 
   render() {
@@ -20,18 +19,19 @@ var Img = React.createClass({
     // it is never overridden by mistake
     var { onError, ...other } = this.props;
 
-    return (
-      <span ref="container">
+    return !this.state.error ? (
+      <span>
         <img {...other} onError={this._handleError} />
       </span>
-    )
+    ) : null;
   },
 
   /**
-   * Remove itself when image is not found
+   * Set `state` error to true to remove the
+   * the dom nodes themselves
    */
   _handleError() {
-    this.refs.container.getDOMNode().remove();
+    this.setState({ error: true });
   }
 });
 
