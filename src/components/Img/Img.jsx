@@ -16,9 +16,13 @@ var Img = React.createClass({
   },
 
   render() {
+    // Omit any passed `onError` prop so that
+    // it is never overridden by mistake
+    var { onError, ...other } = this.props;
+
     return (
       <span ref="container">
-        <img {...this.props} onError={this._handleError} />
+        <img {...other} onError={this._handleError} />
       </span>
     )
   },
