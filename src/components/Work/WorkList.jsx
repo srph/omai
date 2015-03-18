@@ -24,7 +24,8 @@ var WorkList = React.createClass({
           <div className="six columns">
             <CSSTransitionGroup transitionName="a">
               {splitted[0].map((data, i) => {
-                return <WorkItem data={data} key={`data2469_${i}`} />
+                return <WorkItem key={`data2469_${i}`}
+                  data={data} isLast={i == splitted[0].length - 1} />
               })}
             </CSSTransitionGroup>
           </div>
@@ -32,7 +33,8 @@ var WorkList = React.createClass({
           <div className="six columns">
             <CSSTransitionGroup transitionName="a">
               {splitted[1].map((data, i) => {
-                return <WorkItem data={data} key={`data2468_${i}`} />
+                return <WorkItem key={`data2468_${i}`}
+                  data={data} isLast={i == splitted[1].length - 1} />
               })}
             </CSSTransitionGroup>
           </div>
@@ -40,10 +42,6 @@ var WorkList = React.createClass({
 
         <CSSTransitionGroup transitionName="a">
           { isLoading ? <div className="loader"></div> : '' }
-        </CSSTransitionGroup>
-
-        <CSSTransitionGroup transitionName="a">
-          { isDisabled ? <div className="u-text-center u-text-light">...</div> : '' }
         </CSSTransitionGroup>
       </div>
     );

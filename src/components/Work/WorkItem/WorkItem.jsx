@@ -15,19 +15,30 @@ var WorkItem = React.createClass({
     /**
      * Data of the item
      */
-    data: React.PropTypes.object
+    data: React.PropTypes.object,
+
+    /**
+     * Used to check if this item is the last in the
+     * column. Used to remove margin-bottom for
+     * consistency for both situations when the list is shown or hidden
+     */
+    isLast: React.PropTypes.bool.isRequired
   },
 
   render() {
     // Shorthand
-    var { tags, url, title, thumbnail, description } = this.props.data;
+    var { isLast, data } = this.props;
+    var { tags, url, title, thumbnail, description } = data;
 
     // Element styling
     var style = {
       'box': {
         position: 'relative',
         overflow: 'hidden',
-        marginBottom: 20,
+        // There should be no margin-bottom for the the last item
+        // to provide consistency on the footer spacing when the 
+        // list is either shown or hidden.
+        marginBottom: isLast ? 0 : 20,
         background: '#fff',
         boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
         borderRadius: 6,
