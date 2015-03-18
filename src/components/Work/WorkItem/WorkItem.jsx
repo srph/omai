@@ -33,8 +33,23 @@ var WorkItem = React.createClass({
       },
 
       'text': this.buildStyles({
-        padding: 0,
-        mediaQueries: [{ xs: { padding: 15 } }]
+        // These styling sets the text as
+        // a column next to the thumbnail
+        padding: 10,
+        float: 'left',
+        width: '75%',
+        // We'd want to replace overflowing description
+        // with an ellipsis `...`.
+        height: 125,
+
+        // For xs screens, we'll set the text below the thumbnail,
+        // and also set description areas to varying sizes.
+        mediaQueries: [{ xs: {
+          padding: 15,
+          float: 'none',
+          width: '100%',
+          height: 'auto'
+        } }]
       })
     };
 

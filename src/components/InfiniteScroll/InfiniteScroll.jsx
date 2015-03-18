@@ -50,7 +50,7 @@ var InfiniteScroll = React.createClass({
    * resizes, so the bottom is still properly calculated
    */
   componentDidMount() {
-    window.addEventListener('scroll', this._handleScroll);
+    window.addEventListener('scroll', this._handleScroll, false);
     window.addEventListener('onresize', this._handleWindowResize);
   },
 
