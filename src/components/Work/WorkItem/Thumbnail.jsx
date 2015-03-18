@@ -62,8 +62,8 @@ var Thumbnail = React.createClass({
       // as the text / w/e
       float: 'left',
       // So sizes are properly rendered
-      paddingBottom: '25%',
-      width: '25%',
+      paddingBottom: '40%',
+      width: '40%',
       // --
       // We'll use `xs` here since we'd want to retain
       // the 2-column layout only for small screens

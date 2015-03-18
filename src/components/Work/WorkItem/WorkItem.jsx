@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleResolverMixin, MatchMediaItem } from 'radium';
+
 import Thumbnail from './Thumbnail';
+import Description from './Description';
 import Bar from './Bar';
 
 var WorkItem = React.createClass({
@@ -37,19 +39,18 @@ var WorkItem = React.createClass({
         // a column next to the thumbnail
         padding: 10,
         float: 'left',
-        width: '75%',
-        // We'd want to replace overflowing description
-        // with an ellipsis `...`.
-        height: 125,
+        width: '60%',
+        // We'd want to replace overflowing description with an ellipsis `...`.
+        maxHeight: 90,
 
-        // For xs screens, we'll set the text below the thumbnail,
-        // and also set description areas to varying sizes.
+        // For xs screens, we'll set the header and description
+        // below the thumbnail, and also set description areas to varying sizes.
         mediaQueries: [{ xs: {
           padding: 15,
           float: 'none',
           width: '100%',
-          height: 'auto'
-        } }]
+          maxHeight: 'auto',
+        } }],
       })
     };
 
@@ -58,8 +59,8 @@ var WorkItem = React.createClass({
         { thumbnail == undefined ? '' : <Thumbnail src={thumbnail} url={url} title={title} />}
 
         <div style={style.text}>
-          <h5 className="u-color-highlight-alt u-fira -regular">{title}</h5>
-          <p style={{ lineHeight: '1.5' }}>{description}</p>
+          <h5 className="u-color-highlight-alt u-fira -regular" style={{ marginTop: 0 }}>{title}</h5>
+          <Description>{description}</Description>
         </div>
 
         { tags !== undefined ? <Bar tags={tags} /> : '' }
