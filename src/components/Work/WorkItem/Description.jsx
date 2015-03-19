@@ -16,7 +16,7 @@ var Description = React.createClass({
 
       // For large screens, yolo pls swag.
       mediaQueries: [{ xs: {
-        lineHeight: '1.5', textOverflow: 'initial', overflow: 'initial'
+        lineHeight: '1.5', textOverflow: 'initial', overflow: 'initial', whiteSpace: 'initial'
       } }]
     });
 
