@@ -37,7 +37,7 @@ var App = React.createClass({
           { active ? <WorkList /> : '' }
         </CSSTransitionGroup>
 
-        <h5 className="u-text-center u-fira -regular" style={{ marginTop: 25 }}>
+        <h5 className="u-text-center u-fira -regular" style={{ margin: '25px auto' }}>
           <a href="//github.com/srph/omai" className="u-color-highlight">Omai</a>&#8202;
           &copy; 2015+, &#8202;
           <a href="//github.com/srph/omai" className="u-color-highlight">Kier Borromeo (srph)</a>.
