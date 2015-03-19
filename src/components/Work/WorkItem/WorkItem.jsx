@@ -60,6 +60,7 @@ var WorkItem = React.createClass({
           padding: 15,
           float: 'none',
           width: '100%',
+          // Set to dynamic heights
           maxHeight: 'auto',
         } }],
       })
