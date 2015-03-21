@@ -61,9 +61,17 @@ $ npm run watch # Watch for changes (like build, but also watches for files chan
 $ npm run prod # Build (for production; minifies output script, etc)
 ```
 
-## Acknowledgement
+## Tools of the Trade
 
-Thanks to [**ReactJS**](https://facebook.github.io/react), [**Radium**](https://github.com/FormidableLabs/radium), [**Babel**](https://babeljs.io), and [**Webpack**](https://webpack.github.io)!
+- [**ReactJS**](https://facebook.github.io/react) - UI Library
+- [**Radium**](https://github.com/FormidableLabs/radium) - Bye, CSS.
+- [**Babel**](https://babeljs.io) - Transpile ES6 to ES5.
+- [**Webpack**](https://webpack.github.io) - Build scripts.
+- [**Jest**](https://facebook.github.io/jest) - For the tests.
+
+Also, thanks to [**normalize.css**](https://necole.github.io/normalize.css/).
+
+## Acknowledgement
 
 **omai** © 2015+, Kier Borromeo (srph).
 
