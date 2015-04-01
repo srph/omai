@@ -8,22 +8,16 @@ import React from 'react';
  * <Img src={} alt={} ../..>
  */
 var Img = React.createClass({
-  // We'll set `error` to false to load and display the image,
-  // only will it be true when an error occurs
-  getInitialState() { 
-    return { error: false }
-  },
-
   render() {
     // Omit any passed `onError` prop so that
     // it is never overridden by mistake
     var { onError, ...other } = this.props;
 
-    return !this.state.error ? (
+    return (
       <span>
-        <img {...other} onError={this._handleError} />
+        <img {...other} onError={this._handleError} ref="img" />
       </span>
-    ) : null;
+    );
   },
 
   /**
@@ -31,7 +25,7 @@ var Img = React.createClass({
    * the dom nodes themselves
    */
   _handleError() {
-    this.setState({ error: true });
+    this.refs.img.getDOMNode().src = 'https://placehold.it/346x270';
   }
 });
 

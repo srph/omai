@@ -75,7 +75,7 @@ var Thumbnail = React.createClass({
 
     return (
       <a href={url} target="_blank" style={container}>
-        <Img src={'https://mir-cdn.behance.net/v1/rendition/projects/202/32574d24270697.54fa40784145b.png'}
+        <Img src={`dist/thumbs/${src}`}
           alt={`${title} thumbnail`}
           {...this.getBrowserStateEvents()}
           style={style} />

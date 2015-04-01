@@ -71,8 +71,8 @@ var InfiniteScroll = React.createClass({
   },
 
   render() {
-    var { disabled, callback, threshold, throttle, ...other } = this.props;    
-    
+    var { disabled, callback, threshold, throttle, ...other } = this.props;
+
     return (
       <div {...other}>
         {this.props.children}
@@ -88,9 +88,10 @@ var InfiniteScroll = React.createClass({
 
     var height = _body.clientHeight;
     var scroll = _body.scrollTop;
-    var bottom = _body.scrollHeight;
+    var screen = window.innerHeight;
+    // var bottom = window.scrollHeight;
 
-    if ( disabled === true || _promise !== null || scroll + threshold < bottom - height ) {
+    if ( disabled === true || _promise !== null || scroll + threshold + screen < height ) {
       return;
     }
 

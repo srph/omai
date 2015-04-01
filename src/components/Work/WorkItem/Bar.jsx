@@ -5,7 +5,7 @@ var Bar = React.createClass({
     /**
      * Tags of the work item
      */
-    tags: React.PropTypes.arrayOf(React.PropTypes.object)
+    tags: React.PropTypes.array
   },
   render() {
     // Element Styling
@@ -20,14 +20,14 @@ var Bar = React.createClass({
       tag: { color: '#fff' }
     };
 
-    // Shorthand 
+    // Shorthand
     var { tags } = this.props;
 
     return (
       <div className="u-text-truncate" style={style.container}>
         { tags.map( (tag, i) => {
           return (
-            <span>
+            <span key={i}>
               #<span style={style.tag} className="h6">{tag}</span>
               &nbsp;
             </span>
