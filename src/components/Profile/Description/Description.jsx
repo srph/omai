@@ -1,9 +1,13 @@
 import React from 'react';
+import { MatchMediaItem, StyleResolverMixin } from 'radium';
 
 import Caret from './Caret';
 import SeeWorkButton from './SeeWorkButton';
 
 var Description = React.createClass({
+  // Radium mixin used for the media query
+  mixins: [MatchMediaItem, StyleResolverMixin],
+
   propTypes: {
     /**
      * Flag for work (whether active)
@@ -22,7 +26,7 @@ var Description = React.createClass({
 
     var styles = {
       // The container element
-      'box': {
+      'box': this.buildStyles({
         // Set to relative since our caret (absolute positioned)
         // mainly depends on this element container.
         position: 'relative',
@@ -32,12 +36,14 @@ var Description = React.createClass({
         marginLeft: 'auto',
         marginRight: 'auto',
 
-        padding: '0px 10px',
+        padding: '0px 20px',
         // Add swag
         backgroundColor: '#fff',
         boxShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',
         borderRadius: 6,
-      },
+
+        mediaQueries: [{ sm: { padding: '0px 10px' }}]
+      }),
 
       // Description text
       'text': {
