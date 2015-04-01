@@ -133,10 +133,10 @@ export default [
     tags: ['JS', 'Library']
   },
   {
-    title: 'e-dental-yolo',
+    title: 'e-dental-re',
     description: 'IT-FA22 EDMS, built with its own framework',
     thumbnail: '',
-    url: 'https://github.com/srph/e-dental-yolo',
+    url: 'https://github.com/srph/e-dental-re',
     tags: ['PHP', 'Web App']
   },
   {
