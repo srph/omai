@@ -135,7 +135,7 @@ export default [
   {
     title: 'e-dental-yolo',
     description: 'IT-FA22 EDMS, built with its own framework',
-    thumbnail: 'co-app.png',
+    thumbnail: '',
     url: 'https://github.com/srph/e-dental-yolo',
     tags: ['PHP', 'Web App']
   },
