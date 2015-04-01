@@ -51,11 +51,11 @@ var Description = React.createClass({
     return (
       <div className="u-text-center" style={styles.box}>
         <Caret />
-        
-        <div className="u-text-light" style={styles.text}>
-          I do a lot of stuff. Why <span className="u-text-normal">don't you
+
+        <div className="u-text-normal" style={styles.text}>
+          I do a lot of stuff. Why <span className="u-text-bold">don't you
           see my work</span> instead of reading this&nbsp;
-          <span className="u-text-normal">boring message</span>?
+          <span className="u-text-bold">boring message</span>?
         </div>
 
         <SeeWorkButton active={active} activationHandler={activationHandler} />
